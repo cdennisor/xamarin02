@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Semana03.ViewModels"
+             x:Class="Semana03.View.Home.Flyout.Ofertas">
+    <ContentPage.BindingContext>
+        <local:VMProductos/>
+    </ContentPage.BindingContext>
+
+    <StackLayout Margin="20">
+        <Label Text="Productos con descuentos...!"/>
+        <BoxView HorizontalOptions="Fill" BackgroundColor="Gray" HeightRequest="1"/>
+        <CollectionView ItemsSource="{Binding MyOffers}">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Horizontal"
+                                 HorizontalItemSpacing="1"
+                                 VerticalItemSpacing="1"
+                                 Span="1"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame>
+                        <StackLayout WidthRequest="150">
+                            <Image Source="{Binding Img}" HorizontalOptions="Center" HeightRequest="200"/>
+                            <Label TextDecorations="Strikethrough"
+                                   HorizontalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="S/."/>
+                                        <Span Text="{Binding Discount}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label HorizontalOptions="Center" FontAttributes="Bold" 
+                                   FontSize="25" TextColor="Black">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="S/. "/>
+                                        <Span Text="{Binding Price}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Text="{Binding Name}" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                            <Label Text="{Binding Description}" HorizontalOptions="Center" 
+                                   BackgroundColor="{StaticResource primary}" HorizontalTextAlignment="Center"
+                                   TextColor="white"/>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

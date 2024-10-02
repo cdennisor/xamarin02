@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Semana03.ViewModels"
+             x:Class="Semana03.View.Home.Flyout.Categorias">
+    <ContentPage.BindingContext>
+        <local:VMProductos/>
+    </ContentPage.BindingContext>
+
+    <StackLayout Margin="20">
+        <Label Text="Buscar"/>
+        <BoxView HorizontalOptions="Fill" BackgroundColor="Gray" HeightRequest="1"/>
+        <CollectionView ItemsSource="{Binding MyCategory}">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Span="2" Orientation="Vertical"/>
+
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="category_Tapped"/>
+                        </Frame.GestureRecognizers>
+                        <StackLayout>
+                            <Frame CornerRadius="20" Margin="0" VerticalOptions="FillAndExpand">
+                                <StackLayout>
+                                    <Frame CornerRadius="20" Padding="0" HasShadow="False">
+                                        <Image Aspect="AspectFill" Source="{Binding Img}" HorizontalOptions="Center" HeightRequest="150"/>
+                                    </Frame>
+                                    <Label Text="{Binding Category}" HorizontalOptions="Center"/>    
+                                </StackLayout>
+                            </Frame>                            
+                        </StackLayout>                        
+                    </Frame>  
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

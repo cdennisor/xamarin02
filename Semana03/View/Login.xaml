@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Semana03.View.Login">
+
+    <StackLayout VerticalOptions="CenterAndExpand" Margin="20">
+        <Image HeightRequest="200" Aspect="AspectFit"
+            Source="https://png.pngtree.com/thumb_back/fw800/background/20230718/pngtree-modern-shopping-carting-your-purchases-with-mobile-and-credit-card-white-image_3912279.jpg"/>
+        <Label Text="'Compra Fácil'" Style="{StaticResource lblTitle}" Padding="0,30,0,0"/>
+        <Frame Margin="15,10" CornerRadius="50" Padding="0">
+            <StackLayout Padding="20">
+                <Label Text="Usuario:" CharacterSpacing="1.5" FontSize="15"/>
+                <Entry x:Name="txtUser" FontSize="Medium" CharacterSpacing="1" />
+                <Label Text=""/>
+                <Label Text="Contraseña:" CharacterSpacing="1.5" FontSize="15"/>
+                <Entry x:Name="txtPass" FontAttributes="Bold" IsPassword="True"/>
+                <Button x:Name="btn_ISesion" Clicked="btn_ISesion_Clicked" Text="Iniciar Sesión" 
+                    Style="{StaticResource btnColor}"/>
+                <Label Text="Recuperar contraseña?" HorizontalOptions="End"
+                    TextColor="{StaticResource colorPrincipalFuerte}"/>
+            </StackLayout>
+        </Frame>
+        <Label x:Name="txtMensaje" Text="" Style="{StaticResource lblMensaje}"/>
+
+        <!--<producto:VPHeader />
+<producto:VPBody />
+<producto:VPFooter/>-->
+    </StackLayout>
+</ContentPage>

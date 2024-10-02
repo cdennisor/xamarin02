@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Semana03.App">
+    <Application.Resources>
+        <Color x:Key="primary">#27ae60</Color>
+        <Color x:Key="_background">#FFFFFF</Color>
+        <Color x:Key ="colorPrincipal">#2196f3</Color>
+        <Color x:Key="colorPrincipalFuerte">#1976D2</Color>
+        <Color x:Key="blue-dark">#3F51B5</Color>
+        <Color x:Key="danger">#CD5C5C</Color>
+        <Style x:Key="lblTitle" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource colorPrincipal}"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="Padding" Value="0,20,0,0"/>
+        </Style>
+        <Style x:Key="btnColor" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource colorPrincipal}"/>
+            <Setter Property="CornerRadius" Value="20"/>
+            <Setter Property="TextColor" Value="#fff"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="Margin" Value="0,30,0,0"/>
+            <Setter Property="CharacterSpacing" Value="1"/>
+        </Style>
+        <Style x:Key="btnDanger" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource danger}"/>
+            <Setter Property="CornerRadius" Value="20"/>
+            <Setter Property="TextColor" Value="#fff"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="Margin" Value="0,30,0,0"/>
+            <Setter Property="CharacterSpacing" Value="1"/>
+        </Style>
+        <Style x:Key="btn_style" TargetType="Button">
+            <Setter Property="CornerRadius" Value="60"/>
+            <Setter Property="Margin" Value="80,0"/>
+        </Style>
+        <Style x:Key="lblMensaje" TargetType="Label">
+            <Setter Property="TextColor" Value="{StaticResource danger}"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="Padding" Value="20,10"/>
+        </Style>
+        <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeRegular">
+            <On Platform="Android" Value="FontAwesome6Regula400.otf#Regular" />
+        </OnPlatform>
+
+        <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeBrands">
+            <On Platform="Android" Value="FontAwesome6Brands400.otf#Brands" />
+        </OnPlatform>
+
+        <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeSolid">
+            <On Platform="Android" Value="FontAwesome6Solid900.otf#Solid" />
+        </OnPlatform>
+    </Application.Resources>
+</Application>

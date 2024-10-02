@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Semana03.View.Home.Flyout.FlyoutMainPageDetail"
+             xmlns:local="clr-namespace:Semana03.ViewModels"
+             Title="Inicio">
+    <ContentPage.BindingContext>
+        <local:VMProductos/>
+    </ContentPage.BindingContext>
+
+    <StackLayout Margin="20">
+        <Label Text="Buscar producto"/>
+        <BoxView HorizontalOptions="Fill" BackgroundColor="Gray" HeightRequest="1"/>
+        <CollectionView ItemsSource="{Binding MyProducts}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame>
+                        <StackLayout>
+                            <Image Source="{Binding Img}" HorizontalOptions="Center" HeightRequest="200"/>
+                            <Label Text="{Binding Name}" HorizontalOptions="Center" FontSize="18"/>
+                            <Label HorizontalOptions="Center" FontAttributes="Bold" 
+                                   TextColor="Black" FontSize="25">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="S/. "/>
+                                        <Span Text="{Binding Price}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Text="{Binding Description}" HorizontalOptions="Center" 
+                                   BackgroundColor="{StaticResource primary}"
+                                   TextColor="White"/>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
